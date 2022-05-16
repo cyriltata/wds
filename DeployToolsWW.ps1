@@ -15,6 +15,6 @@ Start-Process -Wait -FilePath $filename -ArgumentList "/Q" -PassThru
 # cd ../
 # rmdir $toolsdir
 
-Disable-NetAdapter -Name '*' -Confirm:$false"
+Disable-NetAdapter -Name '*' -Confirm:$false
 
-Get-PnpDevice -class 'MEDIA' | ForEach-Object {Disable-PnpDevice -InstanceId $_.InstanceID -Confirm:$false}"
+Get-PnpDevice -class 'MEDIA' | ForEach-Object {Disable-PnpDevice -InstanceId $_.InstanceID -Confirm:$false}
