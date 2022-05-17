@@ -12,8 +12,8 @@ Invoke-WebRequest -uri "https://raw.githubusercontent.com/cyriltata/wds/main/rem
 reg import $filename
 del $filename
 
-cd ../
-rmdir $toolsdir
+#cd ../
+#rmdir $toolsdir
 
 Disable-NetAdapter -Name 'WLAN' -Confirm:$false
 
