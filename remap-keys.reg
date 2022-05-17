@@ -1,0 +1,44 @@
+Windows Registry Editor Version 5.00
+
+; -----------------------------------------------------------------------------
+; File created on 2022-05-17 by ScancodeMapping (1.0.0.0)
+; -----------------------------------------------------------------------------
+;
+; Remark
+; ------
+;
+; Scancode mappings stored in the Windows registry are always formatted
+; as little endian values!
+;
+; Structure
+; ---------
+;
+; +--------------+-----------+-------------------------------+
+; | Offset       | Size      | Data                          |
+; +--------------+-----------+-------------------------------+
+; | byte 0       | 4 bytes   | Version Information (Header)  |
+; | byte 4       | 4 bytes   | Flags (Header)                |
+; | byte 8       | 4 bytes   | Number of Mappings (Header)   |
+; | byte 12...n  | n*4 bytes | Individual Mappings           |
+; | last 4 bytes | 4 bytes   | Null Terminator (0x00000000)  |
+; +--------------+-----------+-------------------------------+
+;
+; Example
+; -------
+;
+; This code snippet shows the registry data in hexadecimal encoding needed
+; to map the CAPS LOCK keyboard key onto the SHIFT keyboard key.
+;
+; Version:    0x00000000
+; Flags:      0x00000000
+; Elements:   0x00000002
+; Mapping:    0x003A002A
+; Terminator: 0x00000000
+; Binary:     00,00,00,00,00,00,00,00,02,00,00,00,2A,00,3A,00,00,00,00,00
+;
+; -----------------------------------------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,07,00,00,00,1D,00,3B,00,38,00,3C,00,53,E0,3D,00,39,00,1D,00,39,00,38,00,39,00,53,E0,00,00,00,00
+
+; EOF
