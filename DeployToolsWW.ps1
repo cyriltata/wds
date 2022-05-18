@@ -19,4 +19,6 @@ $toolsdir = "C:\WDSTools"
 
 #Get-PnpDevice -class 'MEDIA' | ForEach-Object {Disable-PnpDevice -InstanceId $_.InstanceID -Confirm:$false}
 
+Get-PnpDevice -class 'MEDIA' | ForEach-Object {Enable-PnpDevice -InstanceId $_.InstanceID -Confirm:$false}
+
 
